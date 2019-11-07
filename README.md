@@ -8,4 +8,4 @@ Framework:
 <div align=center><img src="https://github.com/xuhan-whu/others/blob/master/images/framework.jpg" width="520" height="280"/></div><br>
 
 
-This code is base on the code of [DenseFuse](https://github.com/hli1221/imagefusion_densefuse).
+This code is base on the code of [*DenseFuse*](https://github.com/hli1221/imagefusion_densefuse).
