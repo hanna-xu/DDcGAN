@@ -1,15 +1,15 @@
 # DDcGAN-tensorflow:<br> infrared and visible image fusion via dual-discriminator conditional generative adversarial network
 
-This is the code of the following paper: 
+If this work is helpful to you, rlease cite it as: 
 
 
-The previous version of our work can be seen in this paper:
-@inproceedings{xu2019learning,<br>
-  title={Learning a generative model for fusing infrared and visible images via conditional generative adversarial network with dual discriminators},<br>
+The previous version of our work can be seen in this paper:<br>
+@inproceedings{xu2019learning,
+  title={Learning a generative model for fusing infrared and visible images via conditional generative adversarial network with dual discriminators},
   author={Xu, Han and Liang, Pengwei and Yu, Wei and Jiang, Junjun and Ma, Jiayi},<br>
-  booktitle={proceedings of Twenty-Eighth International Joint Conference on Artificial Intelligence (IJCAI-19)},<br>
-  pages={3954--3960},<br>
-  year={2019}<br>
+  booktitle={proceedings of Twenty-Eighth International Joint Conference on Artificial Intelligence (IJCAI-19)},
+  pages={3954--3960},
+  year={2019}
 }<br>
 
 Framework:
