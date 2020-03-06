@@ -5,7 +5,7 @@ This work can be applied for<br>
 2) PET and MRI image fusion<br>  
 
 Framework:
-<div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/procedure.png" width="520" height="280"/></div><br>
+<div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/framework.png" width="520" height="280"/></div><br>
 
 Generator architecture:
 <div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/Generator.png" width="520" height="280"/></div><br>
