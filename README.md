@@ -10,9 +10,6 @@ Framework:
 Generator architecture:
 <div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/Generator.png" width="520" height="280"/></div><br>
 
-The training dataset can be downloaded [*here*](https://pan.baidu.com/s/1S1MKc3XdoICoSg6H33CPZw). <br>
-This code is base on the code of [*DenseFuse*](https://github.com/hli1221/imagefusion_densefuse).
-
 
 If this work is helpful to you, please cite it as: 
 
@@ -27,5 +24,5 @@ The previous version of our work can be seen in this paper:<br>
   year={2019}
 }
 ```
-
+This code is base on the code of [*DenseFuse*](https://github.com/hli1221/imagefusion_densefuse).
 
