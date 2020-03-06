@@ -11,7 +11,9 @@ The previous version of our work can be seen in this paper:<br>
   booktitle={proceedings of Twenty-Eighth International Joint Conference on Artificial Intelligence (IJCAI-19)},<br>
   pages={3954--3960},<br>
   year={2019}<br>
-}```<br>
+}
+```
+<br>
 
 Framework:
 <div align=center><img src="https://github.com/xuhan-whu/others/blob/master/images/framework.jpg" width="520" height="280"/></div><br>
