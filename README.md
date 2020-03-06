@@ -5,7 +5,10 @@ This work can be applied for<br>
 2) PET and MRI image fusion<br>  
 
 Framework:
-<div align=center><img src="https://github.com/xuhan-whu/others/blob/master/images/framework.jpg" width="520" height="280"/></div><br>
+<div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/procedure.png" width="520" height="280"/></div><br>
+
+Generator architecture:
+<div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/Generator.png" width="520" height="280"/></div><br>
 
 The training dataset can be downloaded [*here*](https://pan.baidu.com/s/1S1MKc3XdoICoSg6H33CPZw). <br>
 This code is base on the code of [*DenseFuse*](https://github.com/hli1221/imagefusion_densefuse).
