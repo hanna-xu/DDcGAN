@@ -13,15 +13,15 @@ Generator architecture:
 
 If this work is helpful to you, please cite it as: 
 ```
-@article{ma2020DDcGAN,
-  title={DDcGAN: A Dual-discriminator Conditional Generative Adversarial Network for Multi-resolution Image Fusion},
+@article{ma2020ddcgan,
+  title={DDcGAN: A Dual-Discriminator Conditional Generative Adversarial Network for Multi-Resolution Image Fusion},
   author={Ma, Jiayi and Xu, Han and Jiang, Junjun and Mei, Xiaoguang and Zhang, Xiao-Ping},
   journal={IEEE Transactions on Image Processing},
   volume={29},
-  pages={4980-4995},
+  pages={4980--4995},
   year={2020},
   publisher={IEEE}
-}
+}s
 ```
 
 The previous version of our work can be seen in this paper:<br>
