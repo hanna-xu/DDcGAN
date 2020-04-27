@@ -11,8 +11,8 @@ Generator architecture:
 <div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/Generator.png" width="520" height="280"/></div><br>
 
 The training dataset can be downloaded here:
-1) [*vis-ir dataset*](https://pan.baidu.com/s/1xKF9GBjZ92uhYhZ5gk5vLg)(password:nh2r).<br>
-2) [*PET-MRI dataset*](https://pan.baidu.com/s/1sOPrLmVKG6fgNGP-T_2bXQ)(password: 5d9y).<br>
+1) [vis-ir dataset](https://pan.baidu.com/s/1xKF9GBjZ92uhYhZ5gk5vLg) (password:nh2r).<br>
+2) [PET-MRI dataset](https://pan.baidu.com/s/1sOPrLmVKG6fgNGP-T_2bXQ) (password: 5d9y).<br>
 
 If this work is helpful to you, please cite it as: 
 ```
@@ -39,4 +39,4 @@ The previous version of our work can be seen in this paper:<br>
 ```
 This code is base on the code of [*DenseFuse*](https://github.com/hli1221/imagefusion_densefuse).
 
-If you have any questions, please email to me (xu_han@whu.edu.cn).
+If you have any question, please email to me (xu_han@whu.edu.cn).
