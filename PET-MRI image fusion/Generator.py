@@ -13,7 +13,9 @@ class Generator(object):
 		self.decoder = Decoder(sco)
 
 	def transform(self, vis, ir):
-		img = tf.concat([vis, ir], 3)
+		IR = deconv_ir(ir, strides = [1, 4, 4, 1], scope_name = 'deconv_ir')
+		VIS = deconv_vis(vis, strides = [1, 1, 1, 1], scope_name = 'deconv_vis')
+		img = tf.concat([VIS, IR], 3)
 		code = self.encoder.encode(img)
 		self.target_features = code
 		generated_img = self.decoder.decode(self.target_features)
@@ -31,10 +33,6 @@ class Encoder(object):
 				self.weight_vars.append(self._create_variables(96, 48, 3, scope = 'dense_block_conv2'))
 				self.weight_vars.append(self._create_variables(144, 48, 3, scope = 'dense_block_conv3'))
 				self.weight_vars.append(self._create_variables(192, 48, 3, scope = 'dense_block_conv4'))
-
-	# self.weight_vars.append(self._create_variables(80, 32, 3, scope = 'dense_block_conv5'))
-
-	# self.weight_vars.append(self._create_variables(96, 16, 3, scope = 'dense_block_conv6'))
 
 	def _create_variables(self, input_filters, output_filters, kernel_size, scope):
 		shape = [kernel_size, kernel_size, input_filters, output_filters]
@@ -70,8 +68,6 @@ class Decoder(object):
 				self.weight_vars.append(self._create_variables(128, 64, 3, scope = 'conv2_2'))
 				self.weight_vars.append(self._create_variables(64, 32, 3, scope = 'conv2_3'))
 				self.weight_vars.append(self._create_variables(32, 1, 3, scope = 'conv2_4'))
-
-	# self.weight_vars.append(self._create_variables(16, 1, 3, scope = 'conv2_5'))
 
 	def _create_variables(self, input_filters, output_filters, kernel_size, scope):
 		with tf.variable_scope(scope):
@@ -113,8 +109,3 @@ def conv2d(x, kernel, bias, dense = False, use_relu = True, Scope = None, BN = T
 	if dense:
 		out = tf.concat([out, x], 3)
 	return out
-
-def up_sample(x, scale_factor = 2):
-	_, h, w, _ = x.get_shape().as_list()
-	new_size = [h * scale_factor, w * scale_factor]
-	return tf.image.resize_nearest_neighbor(x, size = new_size)

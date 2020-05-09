@@ -29,6 +29,7 @@ def deconv_vis(input, strides, scope_name):
 	with tf.variable_scope('Generator'):
 		with tf.variable_scope(scope_name):
 			weight_vars.append(_create_variables(1, 1, 3, scope = scope[0]))
+			# weight_vars.append(_create_variables(1, 1, 3, scope = scope[1]))
 	deconv_num = len(weight_vars)
 	out = input
 	for i in range(deconv_num):

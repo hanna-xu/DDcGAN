@@ -15,20 +15,20 @@ BATCH_SIZE = 24
 EPOCHES = 1
 LOGGING = 40
 MODEL_SAVE_PATH = './model/'
-IS_TRAINING = True
+IS_TRAINING = False
 
-f = h5py.File('Medical_dataset.h5', 'r')
-# for key in f.keys():
-#   print(f[key].name)
-sources = f['data'][:]
-sources = np.transpose(sources, (0, 3, 2, 1))
+# f = h5py.File('Medical_dataset.h5', 'r')
+# # for key in f.keys():
+# #   print(f[key].name)
+# sources = f['data'][:]
+# sources = np.transpose(sources, (0, 3, 2, 1))
 
 
 
 def main():
 	if IS_TRAINING:
 		print(('\nBegin to train the network ...\n'))
-		train(sources, MODEL_SAVE_PATH, EPOCHES, BATCH_SIZE, logging_period = LOGGING)
+		# train(sources, MODEL_SAVE_PATH, EPOCHES, BATCH_SIZE, logging_period = LOGGING)
 	else:
 		print('\nBegin to generate pictures ...\n')
 		path = './test_imgs/'

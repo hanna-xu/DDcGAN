@@ -21,10 +21,6 @@ class Discriminator1(object):
 			self.weight_vars.append(self._create_variables(1, 16, 3, scope = 'conv1'))
 			self.weight_vars.append(self._create_variables(16, 32, 3, scope = 'conv2'))
 			self.weight_vars.append(self._create_variables(32, 64, 3, scope = 'conv3'))
-			#self.weight_vars.append(self._create_variables(64, 96, 3, scope = 'conv4'))
-			#self.weight_vars.append(self._create_variables(96, 128, 3, scope = 'conv5'))
-		# self.weight_vars.append(self._create_variables(128, 256, 3, scope = 'conv6'))
-		# self.weight_vars.append(self._create_variables(12, 1, 3, scope = 'conv6'))
 
 	def _create_variables(self, input_filters, output_filters, kernel_size, scope):
 		shape = [kernel_size, kernel_size, input_filters, output_filters]
@@ -37,30 +33,18 @@ class Discriminator1(object):
 		conv_num = len(self.weight_vars)
 		if len(img.shape) != 4:
 			img = tf.expand_dims(img, -1)
-		# if len(c.shape) != 4:
-		# 	c = tf.expand_dims(c, -1)
-		# out = tf.concat([c, img], axis = 3)
 		out = img
 		for i in range(conv_num):
 			kernel, bias = self.weight_vars[i]
 			if i == 0:
 				out = conv2d_1(out, kernel, bias, [1, 2, 2, 1], use_relu = True, use_BN = False,
 				               Scope = self.scope + '/b' + str(i), Reuse = reuse)
-			# elif i == conv_num - 1:
-			# 	out = tf.nn.conv2d(out, kernel, [1, 1, 1, 1], padding = 'VALID')
-			# 	out = tf.nn.bias_add(out, bias)
-			# 	out = tf.nn.tanh(out)
-			# 	out = out / 2 + 0.5
 			else:
 				out = conv2d_1(out, kernel, bias, [1, 2, 2, 1], use_relu = True, use_BN = True,
 				               Scope = self.scope + '/b' + str(i), Reuse = reuse)
 		out = tf.reshape(out, [-1, int(out.shape[1]) * int(out.shape[2]) * int(out.shape[3])])
 		with tf.variable_scope(self.scope):
 			with tf.variable_scope('flatten1'):
-				# 	out = tf.layers.dense(out, 512, activation = tf.nn.relu, use_bias = True, trainable = True,
-				# 	# 	                      reuse = reuse)
-				# 	out = tf.layers.batch_normalization(out, training = True, reuse = reuse)
-				# 	# with tf.variable_scope('flatten2'):
 				out = tf.layers.dense(out, 1, activation = tf.nn.tanh, use_bias = True, trainable = True,
 				                      reuse = reuse)
 		out = out / 2 + 0.5
@@ -89,12 +73,7 @@ class Discriminator2(object):
 			self.weight_vars.append(self._create_variables(1, 16, 3, scope = 'conv1'))
 			self.weight_vars.append(self._create_variables(16, 32, 3, scope = 'conv2'))
 			self.weight_vars.append(self._create_variables(32, 64, 3, scope = 'conv3'))
-		# self.weight_vars.append(self._create_variables(96, 128, 3, scope = 'conv4'))
-		# self.weight_vars.append(self._create_variables(64, 96, 3, scope = 'conv4'))
-		# self.weight_vars.append(self._create_variables(96, 128, 3, scope = 'conv5'))
-		# self.weight_vars.append(self._create_variables(128, 256, 3, scope = 'conv4'))
-		# self.weight_vars.append(self._create_variables(256, 512, 3, scope = 'conv5'))
-		# self.weight_vars.append(self._create_variables(12, 1, 3, scope = 'conv6'))
+
 
 	def _create_variables(self, input_filters, output_filters, kernel_size, scope):
 		shape = [kernel_size, kernel_size, input_filters, output_filters]
@@ -107,30 +86,18 @@ class Discriminator2(object):
 		conv_num = len(self.weight_vars)
 		if len(img.shape) != 4:
 			img = tf.expand_dims(img, -1)
-		# if len(c.shape) != 4:
-		# 	c = tf.expand_dims(c, -1)
-		# out = tf.concat([c, img], axis = 3)
 		out = img
 		for i in range(conv_num):
 			kernel, bias = self.weight_vars[i]
 			if i == 0:
 				out = conv2d_2(out, kernel, bias, [1, 2, 2, 1], use_relu = True, use_BN = False,
 				               Scope = self.scope + '/b' + str(i), Reuse = reuse)
-			# elif i == conv_num - 1:
-			# 	out = tf.nn.conv2d(out, kernel, [1, 1, 1, 1], padding = 'VALID')
-			# 	out = tf.nn.bias_add(out, bias)
-			# 	out = tf.nn.tanh(out)
-			# 	out = out / 2 + 0.5
 			else:
 				out = conv2d_2(out, kernel, bias, [1, 2, 2, 1], use_relu = True, use_BN = True,
 				               Scope = self.scope + '/b' + str(i), Reuse = reuse)
 		out = tf.reshape(out, [-1, int(out.shape[1]) * int(out.shape[2]) * int(out.shape[3])])
 		with tf.variable_scope(self.scope):
 			with tf.variable_scope('flatten1'):
-				# 	out = tf.layers.dense(out, 512, activation = tf.nn.relu, use_bias = True, trainable = True,
-				# 	# 	                      reuse = reuse)
-				# 	out = tf.layers.batch_normalization(out, training = True, reuse = reuse)
-				# 	# with tf.variable_scope('flatten2'):
 				out = tf.layers.dense(out, 1, activation = tf.nn.tanh, use_bias = True, trainable = True,
 				                      reuse = reuse)
 		out = out / 2 + 0.5
