@@ -4,13 +4,13 @@ This work can be applied for<br>
 2) same-resolution infrared and visible image fusion<br>
 2) PET and MRI image fusion<br>  
 
-Framework:
+## Framework:
 <div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/framework.png" width="600" height="280"/></div><br>
 
-Generator architecture:
+## Generator architecture:
 <div align=center><img src="https://github.com/hanna-xu/DDcGAN/blob/master/figures/Generator.png" width="520" height="280"/></div><br>
 
-The training dataset can be downloaded here:
+## Training dataset:
 1) [vis-ir dataset](https://pan.baidu.com/s/1xKF9GBjZ92uhYhZ5gk5vLg) (password:nh2r).<br>
 2) [PET-MRI dataset](https://pan.baidu.com/s/1sOPrLmVKG6fgNGP-T_2bXQ) (password: 5d9y).<br>
 
