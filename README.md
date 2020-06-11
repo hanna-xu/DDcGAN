@@ -13,8 +13,7 @@ This work can be applied for<br>
 ## Training dataset:
 1) [vis-ir dataset](https://pan.baidu.com/s/1xKF9GBjZ92uhYhZ5gk5vLg) (password:nh2r).<br>
 2) [PET-MRI dataset](https://pan.baidu.com/s/1sOPrLmVKG6fgNGP-T_2bXQ) (password: 5d9y).<br>
-
-The code to create the training dataset can be found [*here*](https://github.com/hanna-xu/utils).
+The code to create your own training dataset can be found [*here*](https://github.com/hanna-xu/utils).
 
 If this work is helpful to you, please cite it as: 
 ```
