@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow.python import pywrap_tensorflow
 import numpy as np
+# from Deconv import deconv_vis, deconv_ir
 
 WEIGHT_INIT_STDDEV = 0.05
 
@@ -30,6 +31,10 @@ class Encoder(object):
 				self.weight_vars.append(self._create_variables(96, 48, 3, scope = 'dense_block_conv2'))
 				self.weight_vars.append(self._create_variables(144, 48, 3, scope = 'dense_block_conv3'))
 				self.weight_vars.append(self._create_variables(192, 48, 3, scope = 'dense_block_conv4'))
+
+	# self.weight_vars.append(self._create_variables(80, 32, 3, scope = 'dense_block_conv5'))
+
+	# self.weight_vars.append(self._create_variables(96, 16, 3, scope = 'dense_block_conv6'))
 
 	def _create_variables(self, input_filters, output_filters, kernel_size, scope):
 		shape = [kernel_size, kernel_size, input_filters, output_filters]
@@ -61,11 +66,12 @@ class Decoder(object):
 		with tf.name_scope(scope_name):
 			with tf.variable_scope('decoder'):
 				self.weight_vars.append(self._create_variables(240, 240, 3, scope = 'conv2_1'))
-				self.weight_vars.append(self._create_variables(240, 128, 3, scope = 'conv2_2'))
-				self.weight_vars.append(self._create_variables(128, 64, 3, scope = 'conv2_3'))
-				self.weight_vars.append(self._create_variables(64, 32, 3, scope = 'conv2_4'))
-				self.weight_vars.append(self._create_variables(32, 1, 3, scope = 'conv2_5'))
+				self.weight_vars.append(self._create_variables(240, 128, 3, scope = 'conv2_1'))
+				self.weight_vars.append(self._create_variables(128, 64, 3, scope = 'conv2_2'))
+				self.weight_vars.append(self._create_variables(64, 32, 3, scope = 'conv2_3'))
+				self.weight_vars.append(self._create_variables(32, 1, 3, scope = 'conv2_4'))
 
+	# self.weight_vars.append(self._create_variables(16, 1, 3, scope = 'conv2_5'))
 
 	def _create_variables(self, input_filters, output_filters, kernel_size, scope):
 		with tf.variable_scope(scope):
