@@ -17,17 +17,15 @@ LOGGING = 40
 MODEL_SAVE_PATH = './model/'
 IS_TRAINING = True
 
-f = h5py.File('Training_Dataset.h5', 'r')
-# for key in f.keys():
-#   print(f[key].name)
-sources = f['data'][:]
-# sources = np.transpose(a, (0, 3, 2, 1))
-
-
 
 def main():
 	if IS_TRAINING:
 		print(('\nBegin to train the network ...\n'))
+		f = h5py.File('Training_Dataset.h5', 'r')
+		# for key in f.keys():
+		#   print(f[key].name)
+		sources = f['data'][:]
+		# sources = np.transpose(a, (0, 3, 2, 1))
 		train(sources, MODEL_SAVE_PATH, EPOCHES, BATCH_SIZE, logging_period = LOGGING)
 	else:
 		print('\nBegin to generate pictures ...\n')
