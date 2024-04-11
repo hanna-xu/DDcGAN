@@ -11,7 +11,7 @@ from Discriminator import Discriminator1, Discriminator2
 import time
 
 
-def generate(ir_path, vis_path, model_path, index, output_path = None):
+def generate(ir_path, vis_path, model_path, name, output_path = None):
 	ir_img = imread(ir_path) / 255.0
 	vis_img = imread(vis_path) / 255.0
 	ir_dimension = list(ir_img.shape)
@@ -39,7 +39,7 @@ def generate(ir_path, vis_path, model_path, index, output_path = None):
 		saver.restore(sess, model_path)
 		output = sess.run(output_image, feed_dict = {SOURCE_VIS: vis_img, SOURCE_ir: ir_img})
 		output = output[0, :, :, 0]
-		imsave(output_path + str(index) + '.bmp', output)
+		imsave(output_path + name + '.png', output)
 
 
 # print('generated image shape:', output_image.shape)
