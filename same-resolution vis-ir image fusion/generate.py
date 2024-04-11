@@ -39,7 +39,7 @@ def generate(ir_path, vis_path, model_path, name, output_path = None):
 		saver.restore(sess, model_path)
 		output = sess.run(output_image, feed_dict = {SOURCE_VIS: vis_img, SOURCE_ir: ir_img})
 		output = output[0, :, :, 0]
-		imsave(output_path + name + '.png', output)
+		imsave(output_path + name, output)
 
 
 # print('generated image shape:', output_image.shape)
