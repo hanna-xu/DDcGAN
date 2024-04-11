@@ -35,14 +35,17 @@ def main():
 		# 	test_num = len(files)
 
 		Time=[]
-		for i in range(20):
-			index = i + 1
-			ir_path = path + 'IR' + str(index) + '.bmp'
-			vis_path = path + 'VIS' + str(index) + '.bmp'
+		files = listdir(path+'ir/')
+		for file in files:
+			name = file.split('/')[-1]
+			index = index + 1
+			ir_path = path + 'IR/' + name
+			vis_path = path + 'VIS/' + name
 			begin = time.time()
 			model_path = MODEL_SAVE_PATH + 'model.ckpt'
-			generate(ir_path, vis_path, model_path, index, output_path = savepath)
+			generate(ir_path, vis_path, model_path, name, output_path = savepath)
 			end = time.time()
+			
 			Time.append(end - begin)
 			print("pic_num:%s" % index)
 		print("Time: mean:%s, std: %s" % (np.mean(Time), np.std(Time)))
